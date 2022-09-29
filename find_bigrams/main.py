@@ -1,9 +1,13 @@
 
 def find_bigrams(sentence):
+
+    def format_word(word):
+        return word.strip().lower()
+
     bigrams = []
     words = sentence.split(' ')
     for i in range(len(words) - 1):
-        bigramsItem = (words[i].strip(), words[i+1].strip())
+        bigramsItem = (format_word(words[i]), format_word(words[i+1].strip()))
         bigrams.append(bigramsItem)
 
     return bigrams
